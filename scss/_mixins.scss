@@ -1,0 +1,32 @@
+//Flex mixins
+@mixin flexCenter($js:center,$ai:center) {
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+}
+
+@mixin flexBetween($js:space-between,$ai:center){
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+}
+
+@mixin flexAround($js:space-around,$ai:center){
+  display: flex;
+  justify-content:$js;
+  align-items: $ai;
+}
+
+@mixin flexStart($js:start,$ai:center){
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+}
+
+@mixin flexEnd($js:end,$ai:center){
+  display: flex;
+  justify-content: $js;
+  align-items: $ai;
+}
+
+

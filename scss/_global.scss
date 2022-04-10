@@ -1,0 +1,75 @@
+//Container
+.container {
+  max-width: ($containerWidth + $containerPadding);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
+  // border: 1px solid green;
+  
+  @media (max-width: $breakpoint1400) {
+    max-width: 1000px;
+  }
+  @media (max-width: $breakpoint1200) {
+    max-width: 850px;
+  }
+  @media (max-width: $breakpoint992) {
+    // max-width: 970px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    // max-width: 750px;
+  }
+
+  @media (max-width: $breakpoint480) {
+    max-width: none;
+  }
+}
+
+//Body
+body{
+  &.locked{
+    overflow: hidden;
+  }
+}
+a{
+  color: black;
+}
+
+//Buttons
+.button{
+  font-family: "Chivo Regular", sans-serif;
+  font-size: 16px;
+  max-width: 160px;
+  width: 100%;
+  padding: 16px 32px;
+  border-radius: 12px;
+  &:hover{
+    cursor: pointer;
+    transition: .5s all ease;
+  }
+}
+@media (max-width:$breakpoint1400){
+  .button{
+    font-size: 12px;
+    max-width: 120px;
+    padding: 12px 25px;
+    border-radius: 10px;
+    }
+}
+//greenBtn
+.greenBtn{
+  background-color: #e6f5e2;
+  color: black;
+  // z-index: 5;
+  &:hover{
+    background-color: #d6f7cd;
+  }
+}
+//purpleBtn
+.purpleBtn{
+  background-color: #5c2a9d;
+  color: white;
+  &:hover{
+    background-color: #7435c7;
+  }
+}

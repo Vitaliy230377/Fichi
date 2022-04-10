@@ -1,0 +1,248 @@
+.header {
+  // position: relative;
+  padding: 60px 0 15px 0;
+  width: 100%;
+// border: 1px solid red;
+  &__body {
+    @include flexBetween();
+    width: 100%;
+  }
+  &__menu {
+    top: 0;
+    left: -100%;
+    max-width: 350px;
+    width: 100%;
+  }
+  &__list {
+    position: relative;
+    z-index: 2;
+    max-width: 350px;
+    @include flexStart();
+  }
+  &__link {
+    font-family: "Chivo Bold", sans-serif;
+    font-size: 16px;
+    margin-right: 50px;
+    color: black;
+    animation-name: rubberBand;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    transition: 1s all ease;
+    &:nth-child(2){
+      animation-delay: 1s;
+    }
+    &:nth-child(3){
+      animation-delay: 2s;
+    }
+    &:nth-child(4) {
+      animation-delay: 3s;
+      margin-right: 0px;
+    }
+  }
+  &__link a{
+    transition: 1s all ease;
+    &:hover {
+      transition: 1s all ease;
+      color: $mainBgColor;
+      text-decoration: underline;
+    }
+  }
+  &__burger{
+    display: none;
+  }
+  &__burger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  &__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  &__burger.active span {
+    transform: scale(0);
+  }
+}
+.headerLogo {
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  @include flexCenter();
+  font-family: "Asul Bold", sans-serif;
+  font-size: 30px;
+  max-width: 65px;
+  height: 50px;
+  z-index: 5;
+  &__circle {
+    position: absolute;
+    max-width: 22px;
+    max-height: 22px;
+    width: 100%;
+    height: 100%;
+    background-color: $mainBgColor;
+    border-radius: 50%;
+    right: -7px;
+    bottom: 10px;
+    z-index: -1;
+    animation-name: jello;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+}
+.headerBtn{
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  margin-right: 10px;
+}
+
+//Header Media
+@media (max-width: $breakpoint1400) {
+  .header {
+    padding: 45px 0 15px 0;
+  }
+  .headerLogo {
+    font-size: 22px;
+    max-width: 50px;
+    height: 40px;
+    &__circle {
+      max-width: 18px;
+      max-height: 18px;
+      right: -5px;
+      bottom: 8px;
+    }
+  }
+}
+@media (max-width: $breakpoint992) {
+  .header {
+    padding:35px 0 10px 0;
+    &__body{
+      position: relative;
+    }
+  }
+  .headerLogo {
+    margin: 0;
+    position: relative;
+    font-size: 22px;
+    max-width: 50px;
+    height: 40px;
+    &__circle {
+      max-width: 18px;
+      max-height: 18px;
+      right: -5px;
+      bottom: 8px;
+    }
+  }
+  .headerBtn{
+    position: relative;
+    margin: 0;
+  }
+  
+}
+@media (max-width: $breakpoint768) {
+  // max-width: 750px;
+  .header {
+    padding:25px 0 10px 0;
+    &__burger {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      z-index: 5;
+    }
+    &__burger::before,
+    &__burger::after {
+      content: "";
+      background-color: black;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.5s ease 0s;
+    }
+    &__burger::before {
+      top: 0;
+    }
+    &__burger::after {
+      bottom: 0;
+    }
+    &__burger span {
+      position: absolute;
+      background-color: black;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      top: 9px;
+      transition: all 0.5s ease 0s;
+    }
+    &__menu {
+      z-index: 5;
+      position: fixed;
+      overflow: auto;
+      @include flexCenter();
+      left: -100%;
+      top: 0;
+      max-width: 100%;
+      // max-height: 100%;
+      width: 100%;
+      height: 100%;
+      background-color: $mainMenuColor;
+      padding: 20px;
+      transition: all .3s ease;
+    }
+    &__menu.active {
+      z-index: 5;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: all .3s ease;
+      @include flexCenter();
+    }
+    &__body {
+      @include flexBetween();
+    }
+    //
+    &__link {
+      font-size: 18px;
+      text-align: center;
+      margin:0;
+      transition: 1s all ease;
+    }
+    &__list {
+      display: block;
+    }
+    &__list li {
+      margin-bottom: 15px;
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+  .headerBtn{
+    display: none;
+  }
+}
+@media (max-width: $breakpoint480) {
+  .header{
+    &__burger::before,
+    &__burger::after,
+    &__burger span {
+      width: 80%;
+    }
+  }
+  .headerLogo {
+    font-size: 20px;
+    &__circle {
+      max-width: 16px;
+      max-height: 16px;
+      right: -2px;
+      bottom: 9px;
+    }
+  }
+}
+.getStart{
+  position: absolute;
+  right: 0;
+  background-color: rgb(76, 167, 76);
+}
