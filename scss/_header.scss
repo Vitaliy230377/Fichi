@@ -1,8 +1,7 @@
 .header {
-  // position: relative;
+  position: relative;
   padding: 60px 0 15px 0;
   width: 100%;
-// border: 1px solid red;
   &__body {
     @include flexBetween();
     width: 100%;
@@ -91,6 +90,7 @@
 .headerBtn{
   position: absolute;
   right: 0;
+  bottom: 5px;
   z-index: 5;
   margin-right: 10px;
 }
