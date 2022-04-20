@@ -1,7 +1,9 @@
 .header {
   position: relative;
   padding: 60px 0 15px 0;
+  max-width: 1860px;
   width: 100%;
+  margin: 0 auto;
   &__body {
     @include flexBetween();
     width: 100%;

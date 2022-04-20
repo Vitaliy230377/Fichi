@@ -55,31 +55,30 @@
     }
 }
 .assistBlock {
-    &__item{
+    .assistItem{
         //Узнать чого так
         flex: 0 1 50%;
         @media (max-width:$breakpoint768){
             @include flexCenter();
             flex-direction: column;
         }
-        &--title{
+        &__title{
             font-family: 'Asul Bold';
             font-size: 60px;
             color: black;
             @media (max-width:$breakpoint1400){
                 font-size: 50px;
             }
-            @media (max-width:$breakpoint768){
-                text-align: center;
-                font-size: 40px;
-                line-height: 45px;
+            @media (max-width:$breakpoint992){
+                font-size: 45px;
             }
             @media (max-width:$breakpoint768){
+                text-align: center;
                 font-size: 36px;
                 line-height: 40px;
             }
         }
-        &--text{
+        &__text{
             font-family: 'Chivo Regular';
             font-size: 18px;
             color: #a1a1a1;
@@ -92,27 +91,28 @@
                 line-height: 28px;
             }
         }
-        &--buttons{
+        &__buttons{
             margin-top: 25px;
             @media (max-width:$breakpoint992){
-                margin-top: 15px;
-            }
-            @media (max-width:$breakpoint768){
                 margin-top: 10px;
             }
+            @media (max-width:$breakpoint768){
+                @include flexCenter();
+                flex-direction: column;
+            }
         }
-    }
-    &__btn{
-        margin-top: 20px;
-        &:last-child{
-        margin-left: 25px;
-        }
-        @media (max-width:$breakpoint992){
-            margin-top: 10px;
-        }
-        @media (max-width:$breakpoint768){
+        &__btn{
+            margin-top: 20px;
             &:last-child{
-                margin-left: 0;
+            margin-left: 25px;
+            }
+            @media (max-width:$breakpoint992){
+                margin-top: 10px;
+            }
+            @media (max-width:$breakpoint768){
+                &:last-child{
+                    margin-left: 0;
+                }
             }
         }
     }

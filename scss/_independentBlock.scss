@@ -47,11 +47,11 @@
     flex: 0 1 50%;
     display: flex;
     flex-direction: column;
-    &__item{
+    .independentItem{
         @media (max-width:$breakpoint768) {
             text-align: center;
         }
-        &--title{
+        &__title{
             font-family: 'Asul Bold';
             font-size: 48px;
             padding: 20px 0 20px 0;
@@ -68,7 +68,7 @@
                 font-size: 30px;
             }
         }
-        &--subtitle{
+        &__subtitle{
             font-family: 'Chivo Bold';
             font-size: 14px;
             color: $subtitleColor;
@@ -76,7 +76,7 @@
                 font-size: 12px;
             }
         }
-        &--text{
+        &__text{
             font-family: 'Chivo Regular';
             font-size: 16px;
             color: #a1a1a1;
@@ -92,13 +92,13 @@
 .independentCompanies{
     display: flex;
     align-items: center;
-    &__item{
+    .independentCompaniesItem{
         margin-top: 20px;
         flex: 0 1 50%;
         @media (max-width:$breakpoint1400) {
             margin-top: 15px;
             }
-        &--title{
+        &__title{
             font-family: 'Chivo Bold';
             font-size: 14px;
             color: #a1a1a1;
@@ -106,7 +106,7 @@
                 font-size: 12px;
             }
         }
-        &--icon{
+        &__icon{
             max-width: 35px;
             max-height: 35px;
             @media (max-width:$breakpoint1400) {
