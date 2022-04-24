@@ -15,22 +15,25 @@
         }
     }
 }
-.ourMissionBlock {
+.ourMission {
     @include flexCenter();
     flex-direction: column;
     margin-bottom: 20px;
-    &__item {
+    .ourMissionItem {
         text-align: center;
-        &--subtitle {
+        &__subtitle {
             font-family: "Chivo Bold";
             font-size: 14px;
             color: $subtitleColor;
         }
-        &--title {
+        &__title {
             font-family: "Asul Bold";
             font-size: 48px;
             color: black;
             margin-bottom: 50px;
+            &--color {
+                color: $mainBgColor;
+            }
             @media (max-width: $breakpoint1400) {
                 font-size: 44px;
                 margin-bottom: 30px;
@@ -46,9 +49,6 @@
             @media (max-width: $breakpoint480) {
                 font-size: 20px;
             }
-        }
-        &--color {
-            color: $mainBgColor;
         }
     }
 }
